@@ -1,24 +1,81 @@
-// Don't forget to tell Prisma about your edits to this file using
-// `yarn rw prisma migrate dev` or `yarn rw prisma db push`.
-// `migrate` is like committing while `push` is for prototyping.
-// Read more about both here:
-// https://www.prisma.io/docs/orm/prisma-migrate
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = "native"
+model Valley {
+  unique_sample_number Int     @id @unique(map: "unique_sample_number_UNIQUE") @default(autoincrement())
+  sample_id            String? @db.Text
+  TEC                  Float?
+  pH                   Float?
+  EC                   Float?
+  Sulfur               BigInt?
+  Phosphorus           BigInt?
+  Olsen_P              BigInt? @map("Olsen P")
+  Calcium              BigInt?
+  Magnesium            BigInt?
+  Potassium            BigInt?
+  Sodium               BigInt?
+  Boron                Float?
+  Iron                 BigInt?
+  Manganese            BigInt?
+  Copper               Float?
+  Zinc                 Float?
+  Aluminum             BigInt?
+  Total_Carbon__       Float?  @map("Total Carbon %")
+  Total_Nitrogen__     Float?  @map("Total Nitrogen %")
+  C_N_Ratio            Float?  @map("C/N Ratio")
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model ValleyRedwood {
+  unique_sample_number Int     @id @unique(map: "unique_sample_number_UNIQUE") @default(autoincrement())
+  sample_id            String? @db.Text
+  TEC                  Float?
+  pH                   Float?
+  EC                   Float?
+  Sulfur               BigInt?
+  Phosphorus           BigInt?
+  Olsen_P              BigInt? @map("Olsen P")
+  Calcium              BigInt?
+  Magnesium            BigInt?
+  Potassium            BigInt?
+  Sodium               BigInt?
+  Boron                Float?
+  Iron                 BigInt?
+  Manganese            BigInt?
+  Copper               Float?
+  Zinc                 Float?
+  Aluminum             BigInt?
+  Total_Carbon__       Float?  @map("Total Carbon %")
+  Total_Nitrogen__     Float?  @map("Total Nitrogen %")
+  C_N_Ratio            Float?  @map("C/N Ratio")
+}
+
+model valley_test {
+  unique_sample_number Int     @id @unique(map: "unique_sample_number_UNIQUE") @default(autoincrement())
+  sample_id            String? @db.Text
+  TEC                  Float?
+  pH                   Float?
+  EC                   Float?
+  Sulfur               BigInt?
+  Phosphorus           BigInt?
+  Olsen_P              BigInt? @map("Olsen P")
+  Calcium              BigInt?
+  Magnesium            BigInt?
+  Potassium            BigInt?
+  Sodium               BigInt?
+  Boron                Float?
+  Iron                 BigInt?
+  Manganese            BigInt?
+  Copper               Float?
+  Zinc                 Float?
+  Aluminum             BigInt?
+  Total_Carbon__       Float?  @map("Total Carbon %")
+  Total_Nitrogen__     Float?  @map("Total Nitrogen %")
+  C_N_Ratio            Float?  @map("C/N Ratio")
 }
