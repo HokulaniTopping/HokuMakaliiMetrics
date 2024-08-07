@@ -1,6 +1,9 @@
 import type { QueryResolvers, MutationResolvers } from 'types/graphql'
-
+import { PrismaClient } from '@prisma/client';
 import { db } from 'src/lib/db'
+import type { QueryvalleyArgs } from 'api/src/graphql/valleys.sdl'
+
+const prisma = new PrismaClient();
 
 export const valleys: QueryResolvers['valleys'] = () => {
   return db.valley.findMany()
@@ -9,8 +12,9 @@ export const valleys: QueryResolvers['valleys'] = () => {
 export const valley: QueryResolvers['valley'] = ({ unique_sample_number }) => {
   return db.valley.findUnique({
     where: { unique_sample_number },
-  })
-}
+  });
+};
+
 
 export const createValley: MutationResolvers['createValley'] = ({ input }) => {
   return db.valley.create({

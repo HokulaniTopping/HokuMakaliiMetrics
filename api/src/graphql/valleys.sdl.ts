@@ -23,9 +23,16 @@ export const schema = gql`
     C_N_Ratio: Float
   }
 
+
   type Query {
     valleys: [Valley!]! @requireAuth
     valley(unique_sample_number: Int!): Valley @requireAuth
+    valley(pH: Float): Valley @requireAuth
+  }
+
+
+  type QueryvalleyArgs {
+  unique_sample_number: Int
   }
 
   input CreateValleyInput {
@@ -83,3 +90,4 @@ export const schema = gql`
     deleteValley(unique_sample_number: Int!): Valley! @requireAuth
   }
 `
+export type QueryvalleyArgs = {}
