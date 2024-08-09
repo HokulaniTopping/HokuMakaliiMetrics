@@ -3,6 +3,17 @@ import { PrismaClient } from '@prisma/client';
 import { db } from 'src/lib/db'
 import type { QueryvalleyArgs } from 'api/src/graphql/valleys.sdl'
 
+
+
+
+export const customQuery = async () => {
+  const result = await db.$queryRaw `SELECT pH FROM Valley WHERE unique_sample_number = 1`
+  return result
+}
+
+
+
+
 const prisma = new PrismaClient();
 
 export const valleys: QueryResolvers['valleys'] = () => {

@@ -3,18 +3,27 @@ import type {
   FindValleyByUniqueSampleNumberVariables,
 } from 'types/graphql'
 
+import Valley from '../Valley/Valley'
+
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
 } from '@redwoodjs/web'
 
-import Valley from 'src/components/Valley/Valley'
 
 export const QUERY: TypedDocumentNode<
   FindValleyByUniqueSampleNumber,
   FindValleyByUniqueSampleNumberVariables
 > = gql`
+
+
+
+
+
+
+
+#We want to use this to find each metric by sample number and display the data
   query FindValleyByUniqueSampleNumber($unique_sample_number: Int!) {
     valley: valley(unique_sample_number: $unique_sample_number) {
       unique_sample_number

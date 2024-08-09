@@ -15,6 +15,8 @@ import { toast } from '@redwoodjs/web/toast'
 
 import ValleyForm from 'src/components/Valley/ValleyForm'
 
+
+
 export const QUERY: TypedDocumentNode<EditValleyByUniqueSampleNumber> = gql`
   query EditValleyByUniqueSampleNumber($unique_sample_number: Int!) {
     valley: valley(unique_sample_number: $unique_sample_number) {
@@ -44,7 +46,6 @@ export const QUERY: TypedDocumentNode<EditValleyByUniqueSampleNumber> = gql`
 `
 
 const UPDATE_VALLEY_MUTATION: TypedDocumentNode<
-  EditValleyById,
   UpdateValleyMutationVariables
 > = gql`
   mutation UpdateValleyMutation(
@@ -98,19 +99,19 @@ export const Success = ({
       },
     }
   )
-
   const onSave = (
     input: UpdateValleyInput,
-    id: EditValleyByUniqueSampleNumber['valley']['id']
+    unique_sample_number: EditValleyByUniqueSampleNumber['valley']['unique_sample_number']
   ) => {
-    updateValley({ variables: { id, input } })
+    updateValley({ variables: { unique_sample_number, input } });
   }
+
 
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
         <h2 className="rw-heading rw-heading-secondary">
-          Edit Valley {valley?.id}
+          Edit Valley {valley?.unique_sample_number}
         </h2>
       </header>
       <div className="rw-segment-main">
