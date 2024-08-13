@@ -3,10 +3,22 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY } from 'src/components/Valley/ValleysCell';
 import MetricBox from 'src/components/MetricBox/MetricBox';
+import 'web/src/components/MetricBox/MetricBox.css';
 
 // Define the component that will fetch data and display MetricBox
 const HomePage: React.FC = () => {
   const { loading, error, data } = useQuery(QUERY);
+
+
+  interface WrapperProps {
+    children: React.ReactNode;
+  }
+
+
+  const Wrapper: React.FC<WrapperProps> = ({ children }) => {
+    return <div className="wrapper">{children}</div>;
+  };
+
 
   // Handle loading state
   if (loading) return <p>Loading...</p>;
@@ -21,11 +33,12 @@ const HomePage: React.FC = () => {
   // Assuming you want to display the first valley's metrics
   const valley = data.valleys[0];
 
+
   return (
 
     <div>
       <h1>HomePage</h1>
-      <div>
+      <div className="wrapper">
         <MetricBox name="unique_sample_number" value={valley.unique_sample_number} />
         <MetricBox name="sample_id" value={valley.sample_id} />
         <MetricBox name="TEC" value={valley.TEC} />

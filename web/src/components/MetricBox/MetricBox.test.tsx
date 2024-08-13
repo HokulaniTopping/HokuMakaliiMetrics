@@ -7,8 +7,13 @@ import MetricBox from './MetricBox'
 
 describe('MetricBox', () => {
   it('renders successfully', () => {
+    const props = {
+      name: 'Metric Name',
+      value: 100, // Replace with a meaningful value for your test
+    }
+
     expect(() => {
-      render(<MetricBox />)
+      render(<MetricBox {...props} />)
     }).not.toThrow()
   })
 })
