@@ -1,3 +1,20 @@
+body {
+  background-color: #000000; /* Black background for the entire page */
+  color: #ffffff; /* Optional: Set text color to white for better visibility */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif; /* Optional: Set a default font */
+}
+
+/* Ensure the main container spans the full viewport height */
+.page-container {
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox layout to center content */
+  flex-direction: column;
+}
+
+
+
 /* Container for the metric boxes */
 .metric-box-container {
   display: flex;              /* Align boxes in a row */
@@ -23,6 +40,7 @@
 .metric-name {
   font-size: 1.2em;
   margin-bottom: 5px;
+  font-family: 'nunito sans';
 
 }
 
@@ -43,6 +61,7 @@
   white-space: nowrap;     /* Prevents wrapping to the next line */
   display: flex;           /* Enables flexbox layout */
   gap: 10px;               /* Adds space between each MetricBox */
+  background-color: #000000;
 }
 
 

@@ -29,17 +29,16 @@ const HomePage: React.FC = () => {
   // Handle case where no valleys are found
   if (!data || !data.valleys || data.valleys.length === 0) return <p>No data available</p>;
 
-
   // Assuming you want to display the first valley's metrics
   const valley = data.valleys[0];
 
 
   return (
-
+    <body>
     <div>
-      <h1>HomePage</h1>
+      <h1>ʻUlu 1</h1>
       <div className="wrapper">
-        <MetricBox name="unique_sample_number" value={valley.unique_sample_number} />
+        <MetricBox name="sample_number" value={valley.unique_sample_number} />
         <MetricBox name="sample_id" value={valley.sample_id} />
         <MetricBox name="TEC" value={valley.TEC} />
         <MetricBox name="pH" value={valley.pH} />
@@ -62,6 +61,8 @@ const HomePage: React.FC = () => {
         <MetricBox name="C_N_Ratio" value={valley.C_N_Ratio} />
       </div>
     </div>
+    </body>
+
   );
 };
 

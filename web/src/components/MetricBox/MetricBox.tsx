@@ -5,8 +5,8 @@ import React from 'react';
 const MetricBox = ({ name, value }) => {
   return (
     <div className="metric-box">
-      <h3 className="metric-name">{name}</h3>
-      <p className="metric-value">{value !== null ? value : 'N/A'}</p>
+      <h3 className="metric-value">{value !== null ? value : 'N/A'}</h3>
+      <p className="metric-name">{name}</p>
     </div>
   );
 };
