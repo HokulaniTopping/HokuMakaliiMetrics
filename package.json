@@ -7,9 +7,9 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/cli-storybook": "7.7.3",
-    "@redwoodjs/core": "7.7.3",
-    "@redwoodjs/project-config": "7.7.3"
+    "@redwoodjs/cli-storybook": "7.7.4",
+    "@redwoodjs/core": "7.7.4",
+    "@redwoodjs/project-config": "7.7.4"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
