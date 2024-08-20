@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const MetricBox = ({ name, value, rangeMin, rangeMax }) => {
+const MetricBox = ({ name, value, rangeMin, rangeMax}) => {
   return (
     <div className="metric-box">
       <div className="metric-value-container">

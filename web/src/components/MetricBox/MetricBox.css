@@ -92,7 +92,9 @@ body {
   white-space: nowrap;     /*Prevents wrapping to the next line*/
   display: flex;           /* Enables flexbox layout */
   gap: 10px;               /* Adds space between each MetricBox */
+  border-radius: 8px;
   background-color: #000000;
+
 }
 
 /* Container for the metric boxes */
@@ -107,7 +109,7 @@ body {
 
 .metric-box {
   width: 200px;               /* Set a fixed width for each box */
-  height: 150px;              /* Set a fixed height for each box */
+  height: 300px;              /* Set a fixed height for each box */
   padding: 16px;              /* Padding inside each box */
   border: 1px solid #ddd;     /* Border around each box */
   border-radius: 8px;         /* Rounded corners */
@@ -121,35 +123,37 @@ body {
   /* background-color: #58683c; Green background */
   color: #ffffff; /* White text */
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'nunito sans';
 }
-
 
 .metric-value-container {
   display: flex;
-  justify-content: center;
-  align-items: baseline;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
 }
 
-
+/* This is the number */
 .metric-value {
-  font-size: 3em;
+  font-size: 4em;
   margin: 0;
 }
 
-
+/* The name of the element */
 .metric-unit {
-  font-size: 1.5em;
-  margin-left: 5px;
-  margin-bottom: 5px;
+  font-size: 1em;
+  margin-top: 5px; /* Add some space above the unit */
 }
+
+
+
 
 
 .metric-range {
   margin-top: 10px;
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border-radius: 5px;
-  color: #58683c;
+  color: #000000;
   padding: 5px;
 }
 
@@ -160,23 +164,29 @@ body {
   font-size: 0.9em;
 }
 
+
+
+/* Container for the range bar */
 .range-bar {
-  position: relative;
-  height: 5px;
-  background-color: #ddd;
-  border-radius: 2.5px;
-  /* overflow: hidden; */
+  position: relative; /* Set position relative for the range bar */
+  width: 100%;        /* Full width of the metric box */
+  height: 10px;       /* Height of the range bar */
+  background-color: #ddd; /* Background color for the range bar */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden;   /* Hide overflow to keep range fill within the bar */
 }
 
+/* Range tick mark */
 .range-fill {
-  position: absolute;
-  height: 100%;
-  width: 2px;
-  background-color: #58683c;
+  position: absolute; /* Absolute positioning within the range bar */
+  height: 15px;       /* Full height of the range bar */
+  width: 5px;         /* Width of the tick mark */
+  background-color: #000000; /* Color of the tick mark */
 }
+
 
 .optimum-text {
   margin-top: 5px;
   font-size: 0.9em;
-  color: #58683c;
+  color: #000000;
 }

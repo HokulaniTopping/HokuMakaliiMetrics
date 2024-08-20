@@ -135,8 +135,9 @@ const HomePage: React.FC = () => {
 
   // Function to determine the background color based on the value and range
   const getBackgroundBoxColor = (value: number, rangeMin: number, rangeMax: number) => {
-    return value >= rangeMin && value <= rangeMax ? 'green' : 'red';
+    return value >= rangeMin && value <= rangeMax ? '#607126' : '#A25151';
   };
+
 
 
   return (
@@ -156,16 +157,16 @@ const HomePage: React.FC = () => {
         <div className="wrapper">
           {['TEC', 'pH', 'Sulfur', 'EC', 'Phosphorus', 'Olsen_P', 'Calcium', 'Magnesium', 'Potassium', 'Sodium', 'Boron', 'Iron', 'Manganese', 'Copper', 'Zinc', 'Aluminum', 'Total_Nitrogen__', 'Total_Carbon__', 'C_N_Ratio'].map((metric, index) => {
             const value = valley[metric.replace(' ', '_')];
-            const minRange = valley[`${metric.replace(' ', '_')}_Min`];
-            const maxRange = valley[`${metric.replace(' ', '_')}_Max`];
+            const minRange = valley[`${metric.replace(' ', '_')}_Min`] || 10;
+            const maxRange = valley[`${metric.replace(' ', '_')}_Max`] || 100;
 
             return (
               <div key={metric} style={{ backgroundColor: getBackgroundBoxColor(value, minRange, maxRange) }}>
                 <MetricBox
                   name={metric}
                   value={value}
-                  rangeMin={.01}
-                  rangeMax={10}
+                  rangeMin={minRange}
+                  rangeMax={maxRange}
                 />
               </div>
             );
