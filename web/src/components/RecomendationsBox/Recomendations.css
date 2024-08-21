@@ -1,0 +1,41 @@
+/* Make the RecomendationsBox a full-width, responsive box */
+.Recomendations-box {
+  width: 100%; /* Full width across the screen */
+  background-color: #f5f5f5; /* Light background color for visibility */
+  padding: 20px; /* Add padding inside the box */
+  box-sizing: border-box; /* Ensure padding doesn't add to the width */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 20px; /* Space above the box */
+  text-align: center; /* Center content inside the box */
+  height: 20vh; /* 20% of the viewport height */
+}
+
+
+.Recomendations-box p {
+  font-size: 1.5em; /* Responsive font size */
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .Recomendations-box {
+    height: 15vh; /* Adjust height for smaller screens */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .Recomendations-box p {
+    font-size: 1.2em; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Adjustments for larger screens */
+  .Recomendations-box {
+    height: 25vh; /* Increase height for larger screens */
+    padding: 25px; /* Increase padding for larger screens */
+  }
+
+  .Recomendations-box p {
+    font-size: 2em; /* Larger font size for larger screens */
+  }
+}
