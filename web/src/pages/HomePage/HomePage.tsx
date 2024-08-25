@@ -4,7 +4,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY } from 'src/components/Valley/ValleysCell';
 import MetricBox from 'src/components/MetricBox/MetricBox';
 import 'web/src/components/MetricBox/MetricBox.css';
-import RecomendationsBox from 'src/components/RecomendationsBox/RecomendationsBox';
+import RecomemndationsBox from 'src/components/RecomendationsBox/RecomendationsBox';
+import Gauge from 'src/components/Gauge/Gauge';
 
 // Define the component that will fetch data and display MetricBox
 const HomePage: React.FC = () => {
@@ -43,6 +44,16 @@ const HomePage: React.FC = () => {
           {/* This is where you change the type of soil it is */}
           <h2 className="soil_type">Hanalei Soil</h2>
           <h2 className="Date">{year}-{month}-{day}</h2>
+          <Gauge
+            percentage={95}
+            label="Hanelei soil"
+            date="Aug 1st, 2024"
+            pH={valley.pH}
+            ec={valley.EC}
+            carbon={valley.Total_Carbon__}
+          />
+
+
 
 
         <div className="wrapper-metric-boxes">
@@ -59,15 +70,25 @@ const HomePage: React.FC = () => {
                   rangeMax={maxRange}
                 />
               </div>
+
+
            );
           })}
         </div>
       </div>
 
       {/* RECOMMENDATIONS BOX */}
-      <div className="Recomendations-Box">
-          <RecomendationsBox />
+      <div className="wrapper-recomendations-box">
+        <RecomemndationsBox />
       </div>
+
+
+
+
+
+
+
+
     </body>
     )};
 

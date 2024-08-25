@@ -1,14 +1,14 @@
 import React from 'react';
+import 'web/src/components/RecomendationsBox/Recomendations.css';
 
-
-
-const RecomendationsBox = () => {
+const RecommendationsBox = () => {
   return (
-    <div className="Recomendations-box">
-
-
+    <div className="wrapper-recommendations-box">
+      <div className="recommendations-box">
+        <p>Recommendations will appear here.</p>
+      </div>
     </div>
   );
 };
 
-export default RecomendationsBox
+export default RecommendationsBox;

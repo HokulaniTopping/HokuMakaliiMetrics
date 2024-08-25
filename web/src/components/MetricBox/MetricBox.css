@@ -3,7 +3,7 @@ body {
   color: #ffffff; /* Optional: Set text color to white for better visibility */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
-  font-family: 'nunito sans';
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 /*PAGE CONTAINER*/
@@ -12,7 +12,12 @@ body {
   display: flex; /* Flexbox layout to center content */
   flex-direction: column;
 }
+
+
+
 /*------------------------------------------------------------------------------*/
+
+
 
 
 /*THIS IS THE TOP INFO*/
@@ -24,7 +29,7 @@ body {
   margin-top: 10px;       /* Add space above the text */
   padding-right: 20px;
   padding-bottom: 0%;
-  font-family: 'nunito sans';
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 
@@ -35,20 +40,20 @@ body {
   text-align: left;     /* Center the text */
   margin-top: px;       /* Add space above the text */
   padding-left: 20px;
-  font-family: 'nunito sans';
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .soil_type {
   font-size: 16px;
   margin-top: 5px; /* Adjust this value to control the spacing */
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 15px;
   text-align: right;
   padding-top: 0%;
   color: #B1C081;
   padding-right: 10px;
   font-weight: 100;
-  font-family: 'nunito sans';
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 
@@ -59,7 +64,7 @@ body {
   text-align: center;     /* Center the text */
   margin-top: 10px;       /* Add space above the text */
   margin-bottom: 10px;    /* Add space below the text */
-  font-family: 'nunito sans';
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .align-horizontal {
@@ -76,7 +81,7 @@ body {
   margin-top: 10px;       /* Add space above the text */
   margin-bottom: 10px;
   padding-right: 20px;
-  font-family: 'nunito sans';
+  font-family: 'Nunito Sans', sans-serif;
 }
 /*------------------------------------------------------------------------------*/
 
@@ -85,25 +90,27 @@ body {
 
 /* Wrapper styling */
 .wrapper-metric-boxes {
-  width: 100%;
   height: 300px;
   overflow-x: auto;        /* Enables horizontal scrolling */
   overflow-y: hidden;      /* Hides vertical scrolling */
   white-space: nowrap;     /*Prevents wrapping to the next line*/
   display: flex;           /* Enables flexbox layout */
   gap: 10px;               /* Adds space between each MetricBox */
-  border-radius: 8px;
-  background-color: #000000;
+  border-radius: 10px;
+  width: 95%; /* Makes the box take up 90% of its container width */
+  max-width: 67000px; /* Optional: sets a maximum width */
+  margin-left: auto; /* Centers the box horizontally */
+  margin-right: auto;
 }
+
 
 /* Container for the metric boxes */
 .metric-box-container {
   display: flex;              /* Align boxes in a row */
   overflow-x: auto;           /* Enable horizontal scrolling */
   gap: 16px;                  /* Space between boxes */
-  padding: 16px;
   border: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 
 }
 
@@ -112,9 +119,9 @@ body {
 .metric-box {
   width: 200px;               /* Set a fixed width for each box */
   height: 300px;              /* Set a fixed height for each box */
-  padding: 16px;              /* Padding inside each box */
-  border: 1px solid #ddd;     /* Border around each box */
-  border-radius: 8px;         /* Rounded corners */
+  /* padding: 16px;              Padding inside each box */
+  border: .5px solid #ddd;
+  border-radius: 10px;         /* Rounded corners */
   box-sizing: border-box;     /*Include padding and border in the element's width and height */
   flex: 0 0 auto;             /* Prevent boxes from shrinking or growing */
   display: flex;              /*Enable flexbox layout*/
@@ -124,11 +131,8 @@ body {
   text-align: center;         /* Center text within each line */
   color: #ffffff; /* White text */
   padding: 20px;
-  font-family: 'nunito sans';
-  position: relative; /* Position relative to use the ::before pseudo-element */
-  /* background-color: #ffffff; Default background color */
+  font-family: 'Nunito Sans', sans-serif;
   overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
-
 }
 
 .metric-value-container {
@@ -136,7 +140,10 @@ body {
   flex-direction: column; /* Stack items vertically */
   align-items: center;    /* Center items horizontally */
   justify-content: center; /* Center items vertically */
+}
 
+.metric-box {
+  font-weight: 500;
 }
 
 
