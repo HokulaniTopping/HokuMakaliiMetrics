@@ -1,3 +1,5 @@
+
+
 body {
   background-color: #000000; /* Black background for the entire page */
   color: #ffffff; /* Optional: Set text color to white for better visibility */
@@ -104,6 +106,7 @@ body {
 }
 
 
+
 /* Container for the metric boxes */
 .metric-box-container {
   display: flex;              /* Align boxes in a row */
@@ -119,21 +122,32 @@ body {
 .metric-box {
   width: 200px;               /* Set a fixed width for each box */
   height: 300px;              /* Set a fixed height for each box */
-  /* padding: 16px;              Padding inside each box */
-  border: .5px solid #ddd;
-  border-radius: 10px;         /* Rounded corners */
-  box-sizing: border-box;     /*Include padding and border in the element's width and height */
-  flex: 0 0 auto;             /* Prevent boxes from shrinking or growing */
-  display: flex;              /*Enable flexbox layout*/
+  border-radius: 10px;        /* Rounded corners */
+  box-sizing: border-box;     /* Include padding and border in the element's width and height */
+  flex: auto;                 /* Prevent boxes from shrinking or growing */
+  /* display: flex;              Enable flexbox layout */
   flex-direction: column;     /* Stack children vertically */
   justify-content: center;    /* Center content vertically */
   align-items: center;        /* Center content horizontally */
   text-align: center;         /* Center text within each line */
-  color: #ffffff; /* White text */
+  color: #ffffff;           /* White text */
   padding: 20px;
   font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
   overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
 }
+
+
+
+.metric-range-wrapper {
+  background-color: #ffffff;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  padding-bottom: 60px;
+  padding-top: 10px;
+}
+
+
 
 .metric-value-container {
   display: flex;
@@ -142,14 +156,16 @@ body {
   justify-content: center; /* Center items vertically */
 }
 
-.metric-box {
-  font-weight: 500;
-}
-
 
 
 .second-number{
   vertical-align: top;
+}
+
+
+
+.metric-value {
+  font-weight: 600;
 }
 
 
@@ -161,13 +177,15 @@ body {
 }
 
 
+
 .metric-range {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: #ffffff00;
   border-radius: 5px;
   color: #000000;
   padding: 5px;
 }
+
 
 .range-labels {
   display: flex;
@@ -182,19 +200,21 @@ body {
 .range-bar {
   position: relative; /* Set position relative for the range bar */
   width: 100%;        /* Full width of the metric box */
-  height: 10px;       /* Height of the range bar */
-  background-color: #ddd; /* Background color for the range bar */
+  height: 5px;       /* Height of the range bar */
   border-radius: 5px; /* Rounded corners */
   overflow: hidden;   /* Hide overflow to keep range fill within the bar */
 }
+
+
 
 /* Range tick mark */
 .range-fill {
   position: absolute; /* Absolute positioning within the range bar */
   height: 15px;       /* Full height of the range bar */
   width: 5px;         /* Width of the tick mark */
-  background-color: #000000; /* Color of the tick mark */
+  background-color: #ffffff; /* Color of the tick mark */
 }
+
 
 
 .optimum-text {

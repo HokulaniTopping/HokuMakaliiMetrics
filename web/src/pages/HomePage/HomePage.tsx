@@ -28,6 +28,9 @@ const HomePage: React.FC = () => {
   // Assuming you want to display the first valley's metrics
   const valley = data.valleys[0];
 
+
+
+
   // Function to determine the background color based on the value and range
   const getBackgroundBoxColor = (value: number, rangeMin: number, rangeMax: number) => {
     return value >= rangeMin && value <= rangeMax ? '#607126' : '#A25151';
@@ -35,6 +38,7 @@ const HomePage: React.FC = () => {
 
   return (
     <body>
+       <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet"></link>
       {/* TOP OF THE SCREEN */}
       <div className="Top_of_screen">
           <div className="align-horizontal">
@@ -44,6 +48,7 @@ const HomePage: React.FC = () => {
           {/* This is where you change the type of soil it is */}
           <h2 className="soil_type">Hanalei Soil</h2>
           <h2 className="Date">{year}-{month}-{day}</h2>
+
           <Gauge
             percentage={95}
             label="Hanelei soil"
@@ -53,25 +58,22 @@ const HomePage: React.FC = () => {
             carbon={valley.Total_Carbon__}
           />
 
-
-
-
         <div className="wrapper-metric-boxes">
           {['TEC', 'pH', 'Sulfur', 'EC', 'Phosphorus', 'Olsen_P', 'Calcium', 'Magnesium', 'Potassium', 'Sodium', 'Boron', 'Iron', 'Manganese', 'Copper', 'Zinc', 'Aluminum', 'Total_Nitrogen__', 'Total_Carbon__', 'C_N_Ratio'].map((metric, index) => {
             const value = valley[metric.replace(' ', '_')];
-            const minRange = valley[`${metric.replace(' ', '_')}_Min`] || 10;
-            const maxRange = valley[`${metric.replace(' ', '_')}_Max`] || 100;
+            const minRange = valley[`${metric.replace(' ', '_')}_Min`] || 1;
+            const maxRange = valley[`${metric.replace(' ', '_')}_Max`] || 10;
+
             return (
-              <div key={metric} style={{ backgroundColor: getBackgroundBoxColor(value, minRange, maxRange) }}>
+              <div key={metric} style={{ backgroundColor: getBackgroundBoxColor(value, minRange, maxRange),  borderRadius: '10px', }}>
                 <MetricBox
                   name={metric}
                   value={value}
                   rangeMin={minRange}
                   rangeMax={maxRange}
+                  backgroundColor={getBackgroundBoxColor(value, minRange, maxRange)}
                 />
               </div>
-
-
            );
           })}
         </div>
@@ -81,11 +83,6 @@ const HomePage: React.FC = () => {
       <div className="wrapper-recomendations-box">
         <RecomemndationsBox />
       </div>
-
-
-
-
-
 
 
 

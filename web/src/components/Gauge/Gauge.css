@@ -1,44 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
-
-.gauge-container {
-  display: flex;
-  flex-direction: column; /* Align children vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  height: 100vh; /* Set to 100% of the viewport height if you want vertical centering within the viewport */
-  background-color: #f0f0f0; /* Optional: Background color for better visibility */
-}
-
-
-svg {
-  display: block; /* Ensure the SVG is treated as a block element */
-  margin: auto; /* Auto margins center the SVG within its container */
-}
-
-
-.date {
-  text-align: center;
-  font-size: 14px;
-  color: #8ACA2B;
-  margin-top: 10px;
-}
-
-.metrics {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
 .metric {
-  text-align: center;
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center vertically if needed */
+  gap: 10px; /* Add space between the value and label */
+  background-color: lightgrey; /* Optional styling */
+  padding: 10px; /* Optional styling */
+  border-radius: 5px; /* Optional styling */
 }
 
-.metric .value {
+.value {
   font-size: 24px;
   font-weight: bold;
 }
 
-.metric .label {
-  font-size: 12px;
-  color: #8ACA2B;
+.integer-part {
+  font-size: 24px; /* Larger font size for the integer part */
+}
+
+.fractional-part {
+  font-size: 14px; /* Smaller font size for the fractional part */
+  vertical-align: top; /* Aligns the smaller numbers to the top */
+}
+
+.label {
+  font-size: 14px;
+  color: grey;
 }
