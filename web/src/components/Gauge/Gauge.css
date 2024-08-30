@@ -1,27 +1,26 @@
+/* .gauge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gauge {
+  width: 100%;
+  max-width: 200px;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
 .metric {
-  display: flex; /* Use flexbox layout */
-  align-items: center; /* Center vertically if needed */
-  gap: 10px; /* Add space between the value and label */
-  background-color: lightgrey; /* Optional styling */
-  padding: 10px; /* Optional styling */
-  border-radius: 5px; /* Optional styling */
-}
-
-.value {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.integer-part {
-  font-size: 24px; /* Larger font size for the integer part */
-}
-
-.fractional-part {
-  font-size: 14px; /* Smaller font size for the fractional part */
-  vertical-align: top; /* Aligns the smaller numbers to the top */
-}
-
-.label {
-  font-size: 14px;
-  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
 }

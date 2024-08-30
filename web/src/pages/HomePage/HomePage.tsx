@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
   if (!data || !data.valleys || data.valleys.length === 0) return <p>No data available</p>;
 
   // Assuming you want to display the first valley's metrics
-  const valley = data.valleys[0];
+  const valley = data.valleys[1];
 
 
 

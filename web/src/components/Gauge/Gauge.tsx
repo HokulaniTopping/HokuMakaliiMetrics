@@ -13,12 +13,13 @@ interface GaugeProps {
 
 const Gauge: React.FC<GaugeProps> = ({ percentage, label, date, pH, ec, carbon }) => {
   const radius = 80;
+  const centerX = 50; // Center X of the gauge
+  const centerY = 50; // Center Y of the gauge
+  const angle = (percentage / 100) * 180; //171
+  const tickAngle = (angle * Math.PI) / 180;
+  const tickX = centerX + (radius * Math.cos(tickAngle));
+  const tickY = centerY - (radius * Math.sin(tickAngle));
   const strokeWidth = 10;
-  const normalizedPercentage = Math.min(Math.max(percentage, 0), 100);
-  const angleRange = 180;
-  const angle = (normalizedPercentage / 100) * angleRange;
-
-
 
 
   return (
@@ -28,26 +29,21 @@ const Gauge: React.FC<GaugeProps> = ({ percentage, label, date, pH, ec, carbon }
         <svg width="100%" height="220" viewBox="0 0 190 100" >
           {/* Background arc */}
             <path
-              d={`M 10 100 A ${radius} ${radius} 0 0 1 180 100`}
+              d={`M 10 100 A ${radius} ${radius} 0 0 1 180 100`} //this is where you can change the size of gauge --the part that says 180
               fill="white"
               stroke="#B1C081"
               strokeWidth={strokeWidth}
             />
-            <div className='tick-mark-for-gauge'>
-              <path d="M50 50 L90 50 A 45 45 0 0 1 80 20 Z" fill="rgba(244, 242, 242, 0.1)" />
-              <line x1="80" y1="15" x2="80" y2="25" stroke="white" strokeWidth="2" />
-            </div>
-
-
-          {/* Percentage text */}
-          <text
-            x="100"
-            y="80"
-            textAnchor="middle"
-            fontSize="36"
-            fill="black"
-            fontFamily="Nunito Sans"
-            ></text>
+          {/*Tick mark*/}
+            <line
+              x1={tickX}
+              y1={tickY}
+              x2={95 + (radius + 5) * Math.sin(tickAngle)}
+              y2={15 - (radius + 5) * Math.cos(tickAngle)}
+              stroke="yellow"
+              strokeWidth="2"
+              stroke-linecap = "round"
+            />
 
           <text x="100" y="80" textAnchor="middle" fontSize="36" fill="black" fontFamily='Nunito Sans' fontWeight={600}>
             {percentage}%
@@ -64,7 +60,6 @@ const Gauge: React.FC<GaugeProps> = ({ percentage, label, date, pH, ec, carbon }
 
 
       {/* Additional metrics */}
-       {/* IF U WANNA DO IT THIS WAY OR THE WAY WITH ALL DIVS */}
       <div className="metrics" style={{padding: '10px',
         paddingRight: '20px',
         paddingLeft: '20px',
