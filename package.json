@@ -23,6 +23,9 @@
   },
   "packageManager": "yarn@4.3.0",
   "dependencies": {
+    "chart.js": "^4.4.4",
+    "lucide-react": "^0.438.0",
+    "react-chartjs-2": "^5.2.0",
     "recharts": "^2.12.7"
   }
 }

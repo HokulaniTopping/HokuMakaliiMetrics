@@ -3923,6 +3923,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurkle/color@npm:^0.3.0":
+  version: 0.3.2
+  resolution: "@kurkle/color@npm:0.3.2"
+  checksum: 10c0/a9e8e3e35dcd59dec4dd4f0105919c05e24823a96347bcf152965c29e48d6290b66d5fb96c071875db752e10930724c48ce6d338fefbd65e0ce5082d5c78970e
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
@@ -10463,6 +10470,15 @@ __metadata:
   version: 0.7.0
   resolution: "chardet@npm:0.7.0"
   checksum: 10c0/96e4731b9ec8050cbb56ab684e8c48d6c33f7826b755802d14e3ebfdc51c57afeece3ea39bc6b09acc359e4363525388b915e16640c1378053820f5e70d0f27d
+  languageName: node
+  linkType: hard
+
+"chart.js@npm:^4.4.4":
+  version: 4.4.4
+  resolution: "chart.js@npm:4.4.4"
+  dependencies:
+    "@kurkle/color": "npm:^0.3.0"
+  checksum: 10c0/9fa3206403a6103916f7762c2665d322c42b0cc07fba91526b1d033ddb887c1ba74b3ebc0bd0748a9e55abd1017f25fdb2292cdd6579d8c2d3bcb1c58f71281c
   languageName: node
   linkType: hard
 
@@ -17658,6 +17674,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.438.0":
+  version: 0.438.0
+  resolution: "lucide-react@npm:0.438.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+  checksum: 10c0/d5e9e9130e301b3231fffd3e5fab85975a7523fb5ab160a8125ad6937de713af46d0ac7a96c1ba532b9ff39a14d940aefa9ea41cb30123ff7f8ce88f44cfe2f1
+  languageName: node
+  linkType: hard
+
 "lz-string@npm:^1.5.0":
   version: 1.5.0
   resolution: "lz-string@npm:1.5.0"
@@ -20457,6 +20482,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-chartjs-2@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "react-chartjs-2@npm:5.2.0"
+  peerDependencies:
+    chart.js: ^4.1.1
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/437e443a268b7eebab3f1a6f0f5d936e58caf650fca55f568a612a46c563d22af683a64185eac8005aa644e4960a5a72cc1075a2574b89ec46c7653aaf4025e2
+  languageName: node
+  linkType: hard
+
 "react-colorful@npm:^5.1.2":
   version: 5.6.1
   resolution: "react-colorful@npm:5.6.1"
@@ -21379,6 +21414,9 @@ __metadata:
     "@redwoodjs/cli-storybook": "npm:7.7.4"
     "@redwoodjs/core": "npm:7.7.4"
     "@redwoodjs/project-config": "npm:7.7.4"
+    chart.js: "npm:^4.4.4"
+    lucide-react: "npm:^0.438.0"
+    react-chartjs-2: "npm:^5.2.0"
     recharts: "npm:^2.12.7"
   languageName: unknown
   linkType: soft

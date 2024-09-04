@@ -204,23 +204,39 @@ body {
   width: 100%;        /* Full width of the metric box */
   height: 5px;       /* Height of the range bar */
   border-radius: 5px; /* Rounded corners */
-  overflow: hidden;   /* Hide overflow to keep range fill within the bar */
+  overflow: visible;   /* Hide overflow to keep range fill within the bar */
 }
 
 
 
-/* Range tick mark */
-.range-fill {
-  position: absolute; /* Absolute positioning within the range bar */
-  height: 15px;       /* Full height of the range bar */
-  width: 5px;         /* Width of the tick mark */
-  background-color: #ffffff; /* Color of the tick mark */
+.metric-boxes-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  gap: 10px;
 }
 
+.metric-boxes-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 
+}
 
-.optimum-text {
-  margin-top: 5px;
-  font-size: 0.9em;
-  color: #000000;
+.metric-box-wrapper {
+  flex: 0 0 auto;
+
+}
+
+.scroll-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1px;
+  color: #ffffff;
+}
+
+.scroll-button:hover {
+  opacity: 0.7;
 }

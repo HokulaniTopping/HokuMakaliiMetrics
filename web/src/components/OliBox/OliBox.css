@@ -1,9 +1,9 @@
-.wrapper-recommendations-box {
+.wrapper-Oli-box {
   /* white-space: nowrap;     Prevents wrapping to the next line */
   display: flex;           /* Enables flexbox layout */
   gap: 10px;               /* Adds space between each MetricBox */
   border-radius: 10px;
-  background-color: #607126;
+  background-color: #d3d7c8;
   margin-top: 40px; /* Add this line to create space above the component */
   width: 95%; /* Makes the box take up 90% of its container width */
   max-width: 67000px; /* Optional: sets a maximum width */
@@ -11,7 +11,7 @@
   margin-right: auto;
 }
 
-.recommendations-box {
+.OliBox-box {
   width: 100%;
   height: 100px;
   gap: 16px;
