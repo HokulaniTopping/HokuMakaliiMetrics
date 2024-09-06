@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useRef } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY } from 'src/components/Valley/ValleysCell';
@@ -10,7 +7,6 @@ import RecomemndationsBox from 'src/components/RecomendationsBox/RecomendationsB
 import Gauge from 'src/components/Gauge/Gauge';
 import OliBox from 'src/components/OliBox/OliBox';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Gauges from 'src/components/Gauge/Gauge';
 
 const HomePage: React.FC = () => {
   const { loading, error, data } = useQuery(QUERY);
@@ -27,11 +23,33 @@ const HomePage: React.FC = () => {
 
   const valley = data.valleys[1];
 
+  const ranges = {
+    TEC: { min: 25, max: 30 },
+    pH: { min: 6.0, max: 6.5 },
+    Sulfur: { min: 40, max: 80 },
+    EC: { min: 0, max: 1.5 },
+    Phosphorus: { min: 30, max: 50 },
+    Olsen_P: { min: 0, max: 10 },
+    Calcium: { min: 3300, max: 3800 },
+    Magnesium: { min: 650, max: 750 },
+    Potassium: { min: 400, max: 550 },
+    Sodium: { min: 0, max: 200 },
+    Boron: { min: 1.0, max: 1.5 },
+    Iron: { min: 100, max: 300 },
+    Manganese: { min: 30, max: 100 },
+    Copper: { min: 3, max: 10 },
+    Zinc: { min: 10, max: 30 },
+    Aluminum: { min: 0, max: 0 },
+    Total_Nitrogen__: { min: 0.15, max: 1 },
+    Total_Carbon__: { min: 2, max: 4 },
+    C_N_Ratio: { min: 0, max: 0 },
+  };
+
   const getBackgroundBoxColor = (value: number, rangeMin: number, rangeMax: number) => {
     return value >= rangeMin && value <= rangeMax ? '#607126' : '#A25151';
   };
 
-  const metrics = ['TEC', 'pH', 'Sulfur', 'EC', 'Phosphorus', 'Olsen_P', 'Calcium', 'Magnesium', 'Potassium', 'Sodium', 'Boron', 'Iron', 'Manganese', 'Copper', 'Zinc', 'Aluminum', 'Total_Nitrogen__', 'Total_Carbon__', 'C_N_Ratio'];
+  const metrics = Object.keys(ranges); // Metrics from the ranges object
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -55,7 +73,7 @@ const HomePage: React.FC = () => {
         <h2 className="Date">{year}-{month}-{day}</h2>
 
         <Gauge
-          percentage={80}
+          percentage={90}
           label="Soil health"
           date="Aug 1st, 2024"
           pH={valley.pH}
@@ -69,12 +87,10 @@ const HomePage: React.FC = () => {
             <ChevronLeft size={40} />
           </button>
 
-
           <div ref={scrollContainerRef} className="metric-boxes-container">
             {metrics.map((metric) => {
               const value = valley[metric.replace(' ', '_')];
-              const minRange = valley[`${metric.replace(' ', '_')}_Min`] || 1;
-              const maxRange = valley[`${metric.replace(' ', '_')}_Max`] || 10;
+              const { min: minRange, max: maxRange } = ranges[metric]; // Get hardcoded min and max
 
               return (
                 <div key={metric} className="metric-box-wrapper" style={{ backgroundColor: getBackgroundBoxColor(value, minRange, maxRange), borderRadius: '10px' }}>
@@ -90,20 +106,15 @@ const HomePage: React.FC = () => {
             })}
           </div>
 
-
           <button onClick={() => handleScroll('right')} className="scroll-button">
             <ChevronRight size={40} style={{marginRight: '0px'}} />
           </button>
         </div>
       </div>
 
-
-
       <div className="wrapper-recomendations-box">
         <RecomemndationsBox />
       </div>
-
-
 
       <div className="wrapper-oli-box">
         <OliBox />
@@ -112,8 +123,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-
-
 export default HomePage;
-
-
