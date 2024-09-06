@@ -48,32 +48,29 @@ Redwood uses [Prisma](https://www.prisma.io/), a next-gen Node.js and TypeScript
 yarn rw prisma migrate dev
 
 # ...
-
+```
 > `rw` is short for `redwood`
 
 
-## Frontend first with Storybook
+> **Environment setup**
 
-Don't know what your data models look like? That's more than ok—Redwood integrates Storybook so that you can work on design without worrying about data. Mockup, build, and verify your React components, even in complete isolation from the backend:
+### Set Up Environment Variables
 
-```
-yarn rw storybook
-```
+1. **Create a `.env` File**:
+   - In the root directory of your project, create a `.env` file if it doesn't already exist.
+   - Add the following line to the `.env` file:
 
-Seeing "Couldn't find any stories"? That's because you need a `*.stories.{tsx,jsx}` file. The Redwood CLI makes getting one easy enough—try generating a [Cell](https://redwoodjs.com/docs/cells), Redwood's data-fetching abstraction:
+     ```bash
+     DATABASE_URL="mysql://mysql:7ca88e7e9989c76a@waiwai-prod.westus2.cloudapp.azure.com:559/hoku_zack_mysql"
+     ```
 
-```
-yarn rw generate cell examplePosts
-```
+   - This connection string includes:
+     - **Username**: `mysql`
+     - **Password**: `7ca88e7e9989c76a`
+     - **Host**: `waiwai-prod.westus2.cloudapp.azure.com`
+     - **Port**: `559`
+     - **Database Name**: `hoku_zack_mysql`
 
-Redwood is designed for both serverless deploy targets like Netlify and Vercel and serverful deploy targets like Render and AWS:
+yarn rw prisma migrate dev
 
-```
-yarn rw setup deploy --help
-```
-
-Don't go live without auth! Lock down your app with Redwood's built-in, database-backed authentication system ([dbAuth](https://redwoodjs.com/docs/authentication#self-hosted-auth-installation-and-setup)), or integrate with nearly a dozen third-party auth providers:
-
-```
-yarn rw setup auth --help
-```
+yarn rw dev
