@@ -9,73 +9,28 @@ datasource db {
 }
 
 model Valley {
-  unique_sample_number Int     @id @unique(map: "unique_sample_number_UNIQUE") @default(autoincrement())
+  unique_sample_number Int     @id @unique(map: "unique_sample_number")
   sample_id            String? @db.Text
   TEC                  Float?
-  pH                   Float?
-  EC                   Float?
-  Sulfur               BigInt?
-  Phosphorus           BigInt?
-  Olsen_P              BigInt? @map("Olsen P")
-  Calcium              BigInt?
-  Magnesium            BigInt?
-  Potassium            BigInt?
-  Sodium               BigInt?
+  pH__1_1_             Float?  @map("pH (1:1)")
+  EC__2_1_             Float?  @map("EC (2:1)")
+  Sulfur               Float?
+  Phosphorus           Float?
+  Olsen_P              Float?  @map("Olsen P")
+  Calcium              Float?
+  Magnesium            Float?
+  Potassium            Float?
+  Sodium               Float?
   Boron                Float?
-  Iron                 BigInt?
-  Manganese            BigInt?
+  Iron                 Float?
+  Manganese            Float?
   Copper               Float?
   Zinc                 Float?
-  Aluminum             BigInt?
+  Aluminum             Float?
   Total_Carbon__       Float?  @map("Total Carbon %")
   Total_Nitrogen__     Float?  @map("Total Nitrogen %")
   C_N_Ratio            Float?  @map("C/N Ratio")
-}
-
-model ValleyRedwood {
-  unique_sample_number Int     @id @unique(map: "unique_sample_number_UNIQUE") @default(autoincrement())
-  sample_id            String? @db.Text
-  TEC                  Float?
-  pH                   Float?
-  EC                   Float?
-  Sulfur               BigInt?
-  Phosphorus           BigInt?
-  Olsen_P              BigInt? @map("Olsen P")
-  Calcium              BigInt?
-  Magnesium            BigInt?
-  Potassium            BigInt?
-  Sodium               BigInt?
-  Boron                Float?
-  Iron                 BigInt?
-  Manganese            BigInt?
-  Copper               Float?
-  Zinc                 Float?
-  Aluminum             BigInt?
-  Total_Carbon__       Float?  @map("Total Carbon %")
-  Total_Nitrogen__     Float?  @map("Total Nitrogen %")
-  C_N_Ratio            Float?  @map("C/N Ratio")
-}
-
-model valley_test {
-  unique_sample_number Int     @id @unique(map: "unique_sample_number_UNIQUE") @default(autoincrement())
-  sample_id            String? @db.Text
-  TEC                  Float?
-  pH                   Float?
-  EC                   Float?
-  Sulfur               BigInt?
-  Phosphorus           BigInt?
-  Olsen_P              BigInt? @map("Olsen P")
-  Calcium              BigInt?
-  Magnesium            BigInt?
-  Potassium            BigInt?
-  Sodium               BigInt?
-  Boron                Float?
-  Iron                 BigInt?
-  Manganese            BigInt?
-  Copper               Float?
-  Zinc                 Float?
-  Aluminum             BigInt?
-  Total_Carbon__       Float?  @map("Total Carbon %")
-  Total_Nitrogen__     Float?  @map("Total Nitrogen %")
-  C_N_Ratio            Float?  @map("C/N Ratio")
+  Nitrate_N            Float?  @map("Nitrate-N")
+  Ammonium_N           Float?  @map("Ammonium-N")
+  KCl_Aluminum         Float?  @map("KCl Aluminum")
 }

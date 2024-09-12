@@ -19,7 +19,8 @@
     "node": "=20.x"
   },
   "prisma": {
-    "seed": "yarn rw exec seed"
+    "seed": "yarn rw exec seed",
+    "schema": "/Users/hokulanitopping/makalii-mysql-test/api/db/schema.prisma"
   },
   "packageManager": "yarn@4.3.0",
   "dependencies": {

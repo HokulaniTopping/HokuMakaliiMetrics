@@ -2,7 +2,8 @@
 import React from 'react';
 
 const MetricBox = ({ name, value, rangeMin, rangeMax, backgroundColor }) => {
-  const [whole, fractional] = value.toFixed(2).split('.');
+  const safeValue = value !== null && value !== undefined ? value : 0;
+  const [whole, fractional] = safeValue.toFixed(2).split('.');
 
   return (
     <div className="metric-box">

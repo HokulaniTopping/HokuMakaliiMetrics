@@ -7,6 +7,9 @@ import RecomemndationsBox from 'src/components/RecomendationsBox/RecomendationsB
 import Gauge from 'src/components/Gauge/Gauge';
 import OliBox from 'src/components/OliBox/OliBox';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Valley from 'src/components/Valley/Valley/Valley';
+
+
 
 const HomePage: React.FC = () => {
   const { loading, error, data } = useQuery(QUERY);
@@ -21,7 +24,19 @@ const HomePage: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
   if (!data || !data.valleys || data.valleys.length === 0) return <p>No data available</p>;
 
-  const valley = data.valleys[1];
+  const valley = data.valleys[0];
+
+  if (valley) {
+    Object.keys(valley).forEach((key) => {
+      const value = valley[key as keyof typeof valley];
+      if (value !== null) {
+        // Process the key if it's not null
+        console.log(`Processing ${key}: ${value}`);
+      }
+    });
+  }
+
+
 
   const ranges = {
     TEC: { min: 25, max: 30 },
@@ -43,6 +58,9 @@ const HomePage: React.FC = () => {
     Total_Nitrogen__: { min: 0.15, max: 1 },
     Total_Carbon__: { min: 2, max: 4 },
     C_N_Ratio: { min: 0, max: 0 },
+    Nitrate_N: {min:0, max: 0},
+    Ammonium_N: {min: 0, max: 0},
+    KCl_Aluminum: {min: 0, max:0},
   };
 
   const getBackgroundBoxColor = (value: number, rangeMin: number, rangeMax: number) => {

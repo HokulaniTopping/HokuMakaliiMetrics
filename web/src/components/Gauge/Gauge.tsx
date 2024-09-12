@@ -117,7 +117,10 @@ const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH, ec, carbon, dat
 };
 
 const Metric: React.FC<{ value: number; label: string; unit?: string }> = ({ value, label, unit }) => {
-  const [integerPart, fractionalPart] = value.toFixed(2).split('.');
+  // Ensure value is not null or undefined, use 0 as a default or handle as needed
+  const safeValue = value !== null && value !== undefined ? value : 0;
+  const [integerPart, fractionalPart] = safeValue.toFixed(2).split('.');
+
 
   return (
     <div
