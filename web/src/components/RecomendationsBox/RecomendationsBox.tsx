@@ -6,7 +6,7 @@ const RecommendationsBox = () => {
     <div className="wrapper-recommendations-box">
       <div className="recommendations-box">
         <p>Recomendations:</p>
-        <p>Breadfruit generally thrives in slightly acidic to neutral soils (pH 6.0–7.5). The current pH of 5.8 is on the lower end, and aluminum levels are relatively high, which could be problematic in acidic soils. - Utilize biochar from native species like kukui. Kukui biochar can improve pH buffering and soil structure, while also acting as a carbon sink. Apply calcium carbonate (lime) or dolomitic lime to raise the pH slightly. This will also supply additional calcium and magnesium to the soil. However, if dolomite is used, ensure it does not overbalance magnesium, which is already sufficient.<br></br><br></br>
+        <p>not generally thrives in slightly acidic to neutral soils (pH 6.0–7.5). The current pH of 5.8 is on the lower end, and aluminum levels are relatively high, which could be problematic in acidic soils. - Utilize biochar from native species like kukui. Kukui biochar can improve pH buffering and soil structure, while also acting as a carbon sink. Apply calcium carbonate (lime) or dolomitic lime to raise the pH slightly. This will also supply additional calcium and magnesium to the soil. However, if dolomite is used, ensure it does not overbalance magnesium, which is already sufficient.<br></br><br></br>
 
 Use local resources like leaf litter from ʻulu, kukui, or other native plants to slowly improve the soil pH while contributing organic matter.<br></br><br></br>
 
