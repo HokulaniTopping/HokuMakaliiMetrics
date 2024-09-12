@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
   if (error) return <p>Error: {error.message}</p>;
   if (!data || !data.valleys || data.valleys.length === 0) return <p>No data available</p>;
 
-  const valley = data.valleys[0];
+  const valley = data.valleys[7];
 
   if (valley) {
     Object.keys(valley).forEach((key) => {
@@ -40,9 +40,9 @@ const HomePage: React.FC = () => {
 
   const ranges = {
     TEC: { min: 25, max: 30 },
-    pH: { min: 6.0, max: 6.5 },
+    // pH: { min: 6.0, max: 6.5 },
     Sulfur: { min: 40, max: 80 },
-    EC: { min: 0, max: 1.5 },
+    // EC: { min: 0, max: 1.5 },
     Phosphorus: { min: 30, max: 50 },
     Olsen_P: { min: 0, max: 10 },
     Calcium: { min: 3300, max: 3800 },
@@ -58,9 +58,10 @@ const HomePage: React.FC = () => {
     Total_Nitrogen__: { min: 0.15, max: 1 },
     Total_Carbon__: { min: 2, max: 4 },
     C_N_Ratio: { min: 0, max: 0 },
-    Nitrate_N: {min:0, max: 0},
-    Ammonium_N: {min: 0, max: 0},
-    KCl_Aluminum: {min: 0, max:0},
+    //Restore after Hoike
+    // Nitrate_N: {min:0, max: 50},
+    // Ammonium_N: {min: 0, max: 0},
+    // KCl_Aluminum: {min: 0, max:0},
   };
 
   const getBackgroundBoxColor = (value: number, rangeMin: number, rangeMax: number) => {
@@ -85,17 +86,18 @@ const HomePage: React.FC = () => {
       <div className="Top_of_screen">
         <div className="align-horizontal">
           <h2 className="sample_id_name">{valley.sample_id}</h2>
-          <h2 className="Ulu_3">ʻUlu 3</h2>
+          {/* <h2 className="Ulu_3">ʻUlu 3</h2> */}
         </div>
-        <h2 className="soil_type">Hanalei Soil</h2>
+        <h2 className="soil_order">Andisol Order</h2>
+        <h2 className="soil_type">ʻōʻōkala Series</h2>
         <h2 className="Date">{year}-{month}-{day}</h2>
 
         <Gauge
-          percentage={90}
+          percentage={85}
           label="Soil health"
           date="Aug 1st, 2024"
-          pH={valley.pH}
-          ec={valley.EC}
+          pH__1_1_={valley.pH}
+          EC__2_1_={valley.EC}
           carbon={valley.Total_Carbon__}
         />
 

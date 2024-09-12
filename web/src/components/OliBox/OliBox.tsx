@@ -55,7 +55,15 @@ const OliBox = () => {
   return (
     <div className="wrapper-Oli-box">
       <div className="OliBox-box">
-        <p>Oli will appear here.</p>
+        <p>
+          ʻO Kalehu ka makua,
+          ʻo Wākea ka makua, <br></br>
+          The parents Volcanic Ash and Sun<br></br>
+          Hānau mai kā lāua ʻo Kula M he keiki<br></br>
+          They give birth to the Kula soil series<br></br>
+          </p>
+
+          <p>- Ka Hānau ʻAna O Ka Papakū Honua</p>
       </div>
     </div>
   );

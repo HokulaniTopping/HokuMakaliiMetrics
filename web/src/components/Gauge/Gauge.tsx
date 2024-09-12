@@ -2,6 +2,8 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, ChartOptions, ChartData } from 'chart.js';
+import Valley from '../Valley/Valley/Valley';
+
 
 // Register required components
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
@@ -9,13 +11,13 @@ ChartJS.register(Title, Tooltip, Legend, ArcElement);
 interface PieChartProps {
   percentage: number;
   label: string;
-  pH: number;
-  ec: number;
+  pH__1_1_: number;
+  EC__2_1_: number;
   carbon: number;
   date: string;
 }
 
-const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH, ec, carbon, date }) => {
+const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH__1_1_, EC__2_1_, carbon, date }) => {
   // Data for the pie chart
   const data: ChartData<'pie'> = {
     labels: [label],
@@ -57,9 +59,6 @@ const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH, ec, carbon, dat
         <Pie data={data} options={options} style={{ height: '300px', width: '600px'}} />
 
 
-
-
-
         {/* Beige overlay circle */}
         <div
           style={{
@@ -80,8 +79,7 @@ const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH, ec, carbon, dat
         >
 
 
-
-           {/* Writing on beige circle... need to change excelent to say poor or okay (perhaps dictionary) */}
+          {/* Writing on beige circle... need to change excelent to say poor or okay (perhaps dictionary) */}
           <div style={{ color: 'black' }}>
             <div style={{ fontSize: '20px', color: '#A7C095', marginBottom: '5px', marginTop: '-20px'}}>EXCELLENT</div>
             <div style={{ fontSize: '4em', fontWeight: 700}}>{percentage}%</div>
@@ -108,16 +106,23 @@ const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH, ec, carbon, dat
           marginBottom: '40px',
         }}
       >
-        <Metric value={pH} label="pH" />
-        <Metric value={ec} label="EC" />
-        <Metric value={carbon} label="Carbon" unit="%" />
+
+
+      {/* Put this back after hoike */}
+        {/* <Metric value={pH__1_1_} label="pH" />
+        <Metric value={EC__2_1_} label="EC" />
+        <Metric value={carbon} label="Carbon" unit="%" /> */}
+        <Metric value={5.8} label="pH" />
+        <Metric value={0.15} label="EC" />
+        <Metric value={5} label="Carbon" unit="%" />
       </div>
     </div>
   );
 };
 
+
+
 const Metric: React.FC<{ value: number; label: string; unit?: string }> = ({ value, label, unit }) => {
-  // Ensure value is not null or undefined, use 0 as a default or handle as needed
   const safeValue = value !== null && value !== undefined ? value : 0;
   const [integerPart, fractionalPart] = safeValue.toFixed(2).split('.');
 

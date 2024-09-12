@@ -21,20 +21,6 @@ body {
 
 
 
-
-/*THIS IS THE TOP INFO*/
-.Ulu_3 {
-  font-size: 24px;        /* Set the font size */
-  font-weight: 500;      /* Make the text bold */
-  color: #ffffff;            /* Set the text color */
-  text-align: right;     /* Center the text */
-  margin-top: 10px;       /* Add space above the text */
-  padding-right: 20px;
-  padding-bottom: 0%;
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-
 .sample_id_name {
   font-size: 24px;        /* Set the font size */
   font-weight: 500;      /* Make the text bold */
@@ -47,16 +33,27 @@ body {
 
 .soil_type {
   font-size: 16px;
-  margin-top: 5px; /* Adjust this value to control the spacing */
+  margin-top: -50px; /* Adjust this value to control the spacing */
   margin-left: auto;
   margin-right: 15px;
   text-align: right;
-  padding-top: 0%;
+  padding-bottom: 40px;
   color: #B1C081;
   padding-right: 10px;
   font-weight: 100;
   font-family: 'Nunito Sans', sans-serif;
 }
+
+.soil_order{font-size: 16px;
+  margin-top: -50px; /* Adjust this value to control the spacing */
+  margin-left: auto;
+  margin-right: 15px;
+  text-align: right;
+  padding-bottom: 40px;
+  color: #B1C081;
+  padding-right: 10px;
+  font-weight: 100;
+  font-family: 'Nunito Sans', sans-serif;}
 
 
 .unique_sample_number {
