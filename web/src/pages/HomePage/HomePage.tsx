@@ -15,10 +15,11 @@ const HomePage: React.FC = () => {
   const { loading, error, data } = useQuery(QUERY);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
+  //Restore after hoike
+  // const currentDate = new Date();
+  // const year = currentDate.getFullYear();
+  // const month = currentDate.getMonth() + 1;
+  // const day = currentDate.getDate();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -90,7 +91,9 @@ const HomePage: React.FC = () => {
         </div>
         <h2 className="soil_order">Andisol Order</h2>
         <h2 className="soil_type">ʻōʻōkala Series</h2>
-        <h2 className="Date">{year}-{month}-{day}</h2>
+        {/* Restore after Hoike */}
+        {/* <h2 className="Date">{year}-{month}-{day}</h2> */}
+        <h2 className="Date">February 26, 2024</h2>
 
         <Gauge
           percentage={85}
