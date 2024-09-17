@@ -128,6 +128,7 @@ const Metric: React.FC<{ value: number; label: string; unit?: string }> = ({ val
 
 
   return (
+
     <div
       className="metric"
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}
