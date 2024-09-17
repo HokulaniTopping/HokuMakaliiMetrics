@@ -112,7 +112,8 @@ const HomePage: React.FC = () => {
 
           <div ref={scrollContainerRef} className="metric-boxes-container">
             {metrics.map((metric) => {
-              const value = valley[metric.replace(' ', '_')];
+              // const value = valley[metric.replace(' ', '_')];
+              const value = 0
               const { min: minRange, max: maxRange } = ranges[metric]; // Get hardcoded min and max
 
               return (
