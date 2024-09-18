@@ -109,12 +109,12 @@ const Gauge: React.FC<PieChartProps> = ({ percentage, label, pH__1_1_, EC__2_1_,
 
 
       {/* Put this back after hoike */}
-        {/* <Metric value={pH__1_1_} label="pH" />
+        <Metric value={pH__1_1_} label="pH" />
         <Metric value={EC__2_1_} label="EC" />
-        <Metric value={carbon} label="Carbon" unit="%" /> */}
-        <Metric value={5.8} label="pH" />
+        <Metric value={carbon} label="Carbon" unit="%" />
+        {/* <Metric value={5.8} label="pH" />
         <Metric value={0.15} label="EC" />
-        <Metric value={5} label="Carbon" unit="%" />
+        <Metric value={5} label="Carbon" unit="%" /> */}
       </div>
     </div>
   );
